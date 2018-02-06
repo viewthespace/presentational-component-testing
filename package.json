@@ -1,0 +1,27 @@
+{
+  "name": "presentational-component-testing",
+  "version": "1.0.0",
+  "description": "An example of how to test a presentational AngularJS component",
+  "main": "index.js",
+  "scripts": {
+    "test": "jasmine test/test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/viewthespace/presentational-component-testing.git"
+  },
+  "keywords": [
+    "javascript",
+    "testing",
+    "angular"
+  ],
+  "author": "Alex Weisberger",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/viewthespace/presentational-component-testing/issues"
+  },
+  "homepage": "https://github.com/viewthespace/presentational-component-testing#readme",
+  "devDependencies": [
+    "jasmine"
+  ]
+}
