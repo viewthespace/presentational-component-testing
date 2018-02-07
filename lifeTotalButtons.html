@@ -1,2 +1,11 @@
-<button class="increment-life">+</button>
-<button class="decrement-life">-</button>
+<button
+  class="increment-life"
+  ng-click="$ctrl.onIncrement()">
+  +
+</button>
+<button
+  class="decrement-life"
+  ng-click="$ctrl.onIncrement()"
+  ng-disabled="$ctrl.lifeTotal === 0">
+  -
+</button>
