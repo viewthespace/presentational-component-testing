@@ -4,7 +4,7 @@
   "description": "An example of how to test a presentational AngularJS component",
   "main": "index.js",
   "scripts": {
-    "test": "jasmine test/test.js"
+    "test": "karma start"
   },
   "repository": {
     "type": "git",
@@ -22,7 +22,11 @@
   },
   "homepage": "https://github.com/viewthespace/presentational-component-testing#readme",
   "devDependencies": [
+    "angular",
+    "angular-mocks",
     "jasmine",
-    "karma"
+    "jquery",
+    "karma",
+    "karma-ng-html2js-preprocessor"
   ]
 }
