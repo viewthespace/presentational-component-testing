@@ -1,11 +1,18 @@
-<button
-  class="increment-life"
-  ng-click="$ctrl.onIncrement()">
-  +
-</button>
-<button
-  class="decrement-life"
-  ng-click="$ctrl.onIncrement()"
-  ng-disabled="$ctrl.lifeTotal === 0">
-  -
-</button>
+<div ng-if="$ctrl.lifeTotal === 0">
+  You are dead
+</div>
+<div ng-if="$ctrl.lifeTotal === 10">
+  You win
+</div>
+<div ng-if="$ctrl.shouldShowLifeButtons()">
+  <button
+    class="increment-life"
+    ng-click="$ctrl.onIncrement()">
+    +
+  </button>
+  <button
+    class="decrement-life"
+    ng-click="$ctrl.onDecrement()">
+    -
+  </button>
+</div>

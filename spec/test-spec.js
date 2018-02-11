@@ -7,12 +7,13 @@ describe("lifeTotalButtons", () => {
 
   function setup() {
     const html = angular.element(`
-        <life-total-buttons
-          life-total="lifeTotal">
-        </life-total-buttons>
-      `);
+      <life-total-buttons
+        life-total="lifeTotal"
+        on-increment="onIncrement()"
+        on-decrement="onDecrement()">
+      </life-total-buttons>
+    `);
     $element = $compile(html)($scope);
-
     $scope.$digest();
   }
 
@@ -22,29 +23,66 @@ describe("lifeTotalButtons", () => {
     angular.mock.module("presentational");
     inject((_$compile_, $rootScope) => {
       $scope = $rootScope.$new();
+      $scope.lifeTotal = 0;
       $compile = _$compile_;
     });
   });
 
-  describe("life decrement button", () => {
-    context("when the life total is 0", () => {
+  context("when the life total is 0", () => {
+    beforeEach(() => {
+      $scope.lifeTotal = 0;
+      setup();
+    });
+
+    it("displays the game over message", () => {
+      expect($element.find("div:contains('You are dead')").length).toEqual(1);
+    });
+  });
+
+  context ("when the life total is 10", () => {
+    beforeEach(() => {
+      $scope.lifeTotal = 10;
+      setup();
+    });
+
+    it("displays the 'You Win' message", () => {
+      expect($element.find("div:contains('You win')").length).toEqual(1);
+    });
+  });
+
+  context("when the life total is between 1 and 9", () => {
+    beforeEach(() => {
+      $scope.lifeTotal = 1;
+    });
+
+    describe("onIncrement", () => {
+      let onDecrementCalled = false;
+
       beforeEach(() => {
-        $scope.lifeTotal = 0;
+        $scope.onDecrement = () => {
+          onDecrementCalled = true;
+        }
         setup();
+        $element.find(".decrement-life").click();
       });
 
-      it("is disabled", () => {
-        expect($element.find(".decrement-life").attr("disabled")).toBe("disabled");
+      it("is called when the decrement button is clicked", () => {
+        expect(onDecrementCalled).toBe(true);
       });
     });
 
-    context("when the life total is not 0", () => {
+    describe("onDecrement", () => {
+      let onIncrementCalled = false;
       beforeEach(() => {
-        $scope.lifeTotal = 1;
+        $scope.onIncrement = () => {
+          onIncrementCalled = true;
+        };
         setup();
+        $element.find(".increment-life").click();
       });
-      it("is not disabled", () => {
-        expect($element.find(".decrement-life").attr("disabled")).toBeUndefined();
+
+      it("is called when the increment button is clicked", () => {
+        expect(onIncrementCalled).toBe(true);
       });
     });
   });
