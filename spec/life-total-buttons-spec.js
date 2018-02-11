@@ -23,7 +23,6 @@ describe("lifeTotalButtons", () => {
     angular.mock.module("presentational");
     inject((_$compile_, $rootScope) => {
       $scope = $rootScope.$new();
-      $scope.lifeTotal = 0;
       $compile = _$compile_;
     });
   });
