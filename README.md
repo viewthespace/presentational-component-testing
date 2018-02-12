@@ -5,7 +5,7 @@ An example of how to test a presentational AngularJS component
 
 This simple application is a bare-bones life counter for a game that begins at 5 life and ends when a player gets to either 10 or 0 life.
 
-![5_life](https://user-images.githubusercontent.com/4043433/36080451-4a3ae3f4-0f5e-11e8-9c0f-3bf72bd3099f.png)
+![5_life](https://user-images.githubusercontent.com/4043433/36080566-d887fa10-0f5f-11e8-897e-c911450e3d42.png)
 
 ---
 
