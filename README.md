@@ -17,7 +17,7 @@ This simple application is a bare-bones life counter for a game that begins at 5
 
 # Serving
 
-Serve application with ./serve (assumes Ruby is installed).
+Serve application with `./serve` then visit `localhost:8000` in a browser (assumes Ruby is installed).
 
 # Testing
 
