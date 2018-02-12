@@ -15,10 +15,13 @@ This simple application is a bare-bones life counter for a game that begins at 5
 
 ![0_life](https://user-images.githubusercontent.com/4043433/36080484-e4e9a570-0f5e-11e8-8726-4edd134ab294.png)
 
-# Serving
+# Running
 
-Serve application with `./serve` then visit `localhost:8000` in a browser (assumes Ruby is installed).
+`npm install`
+`./serve` # Assumes Ruby is installed
+
+Visit `localhost:8000` in a browser
 
 # Testing
 
-Test with `npm test`
+`npm test`
