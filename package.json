@@ -4,6 +4,7 @@
   "description": "An example of how to test a presentational AngularJS component",
   "main": "index.js",
   "scripts": {
+    "start": "./serve",
     "test": "karma start"
   },
   "repository": {

@@ -17,10 +17,12 @@ This simple application is a bare-bones life counter for a game that begins at 5
 
 # Running
 
-`npm install`
-`./serve` # Assumes Ruby is installed
+```
+npm install
+npm start
+```
 
-Visit `localhost:8000` in a browser
+Then visit `localhost:8000` in a browser
 
 # Testing
 
